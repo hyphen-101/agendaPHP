@@ -1,0 +1,271 @@
+/** Custom properties **/
+
+:root {
+    --primario: #c2185b;
+    --primarioOscuro: rgb(156, 10, 69);
+    --secundario: #ffc107;
+    --fuentePrimaria: 'Oswald', sans-serif;
+    --fuenteSecundaria: 'Monda', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--primario);
+    font-family: var(--fuentePrimaria);
+}
+
+.bg-amarillo {
+    background-color: var(--secundario);
+}
+
+.bg-blanco {
+    background-color: #ffffff;
+}
+
+.barra {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    align-items: center;
+}
+
+
+/**Botones**/
+
+.btn {
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.btn-borrar {
+    cursor: pointer;
+    color: var(--primario);
+}
+
+.btn-editar {
+    color: var(--secundario);
+}
+
+.volver {
+    background-color: var(--secundario);
+    color: #000000;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: .5rem;
+}
+
+.contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.sombra {
+    -webkit-box-shadow: 0px 7px 11px 3px rgba(0, 0, 0, 0.27);
+    -moz-box-shadow: 0px 7px 11px 3px rgba(0, 0, 0, 0.27);
+    box-shadow: 0px 7px 11px 3px rgba(0, 0, 0, 0.27);
+    border-radius: 10px;
+}
+
+h1,
+h2 {
+    font-family: var(--fuenteSecundaria);
+    text-align: center;
+    margin: 0;
+}
+
+h1 {
+    padding: 20px;
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--primario);
+}
+
+.contenedor-barra {
+    background-color: var(--primarioOscuro);
+}
+
+
+/*Formulario*/
+
+form {
+    padding: 3rem;
+    margin-top: 2rem;
+}
+
+form legend {
+    font-family: var(--fuenteSecundaria);
+    font-size: 2rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+legend span {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    clear: both;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .campos {
+        display: flex;
+        justify-content: space-between;
+    }
+    .campo {
+        flex: 0 0 calc(33.3% - 1rem);
+    }
+}
+
+.campo {
+    padding: .5rem 0;
+}
+
+.campo label {
+    font-size: 1.2rem;
+}
+
+.campo input[type="text"],
+.campo input[type="tel"] {
+    width: 100%;
+    border: none;
+    padding: .5rem;
+    height: 3rem;
+    margin-top: .5rem;
+    font-size: 1.2rem;
+}
+
+.enviar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.campo input[type="submit"] {
+    background-color: var(--primario);
+    border: none;
+    color: #ffffff;
+    padding: 1rem 4rem;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    transition: background-color .5s ease-in-out;
+    flex: 1;
+}
+
+.campo input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: var(--primarioOscuro);
+}
+
+@media (min-width: 768px) {
+    .campo input[type="submit"] {
+        flex: 0 0 auto;
+    }
+}
+
+
+/**Listado de Contactos**/
+
+.contactos {
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+.contenedor-contactos {
+    max-width: 800px;
+    margin: 4rem auto 0 auto;
+}
+
+.total-contactos {
+    margin: 2rem 0;
+    text-align: center;
+    color: var(--primario);
+    font-size: 2rem;
+}
+
+.total-contactos span {
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.buscador {
+    width: 100%;
+    padding: 1rem;
+    height: 3rem;
+    border: 1px solid #e1e1e1e1;
+    margin-top: 2rem;
+}
+
+.contenedor-tabla {
+    overflow: scroll;
+}
+
+.listado-contacto {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.listado-contacto thead {
+    background-color: var(--primario);
+    color: #ffffff;
+    font-family: var(--fuenteSecundaria);
+    text-transform: uppercase;
+}
+
+.listado-contacto thead th {
+    padding: 1rem 0;
+}
+
+.listado-contacto tbody td {
+    padding: .5rem;
+}
+
+.listado-contacto tbody td:nth-child(4) {
+    text-align: center;
+}
+
+.listado-contacto button {
+    background-color: transparent!important;
+    border: none;
+}
+
+
+/**Notificacion**/
+
+.notificacion {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem 3rem;
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+
+.visible {
+    opacity: 1;
+}
+
+
+/*Colores de notificaciones*/
+
+.correcto {
+    background-color: rgb(178, 241, 117);
+    color: green;
+}
+
+.error {
+    background-color: rgb(238, 148, 166);
+    color: rgb(163, 0, 33);
+}
